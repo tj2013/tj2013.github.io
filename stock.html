@@ -29,19 +29,24 @@ function show_image(src) {
     document.body.appendChild(img);
 }
 
-function show_image_all(intradayUrl, dailyUrl, weeklyUrl, monthlyUrl, stockcode) {
+function show_image_all(intradayUrl, minWeekUrl, dailyUrl, weeklyUrl, monthlyUrl, stockcode) {
     //show_image(intradayUrl + stockcode + suffix);
+    show_image(minWeekUrl + stockcode + suffix);
     show_image(dailyUrl + stockcode + suffix);
     show_image(weeklyUrl + stockcode + suffix);
-    //show_image(monthlyUrl + stockcode + suffix);
+    show_image(monthlyUrl + stockcode + suffix);
 }
 
-function show_us_stock_image(stockcode) {
-    //var intradayUrl = "http://image.sinajs.cn/newchart/v5/usstock/min/"
-    //var dailyUrl = "http://image.sinajs.cn/newchart/v5/usstock/daily/"
-    //var weeklyUrl = "http://image.sinajs.cn/newchart/v5/usstock/weekly/"
-    //var monthlyUrl = "http://image.sinajs.cn/newchart/v5/usstock/monthly/"
-    //show_image_all(intradayUrl, dailyUrl, weeklyUrl, monthlyUrl,stockcode)
+function show_sina_us_stock_image(stockcode) {
+    var intradayUrl = "http://image.sinajs.cn/newchart/v5/usstock/min/"
+    var minWeekUrl = "http://image.sinajs.cn/newchart/v5/usstock/min_week/"
+    var dailyUrl = "http://image.sinajs.cn/newchart/v5/usstock/daily/"
+    var weeklyUrl = "http://image.sinajs.cn/newchart/v5/usstock/weekly/"
+    var monthlyUrl = "http://image.sinajs.cn/newchart/v5/usstock/monthly/"
+    show_image_all(intradayUrl, minWeekUrl, dailyUrl, weeklyUrl, monthlyUrl,stockcode)
+}
+
+function show_stockchart_dot_com_image(stockcode) {
     sizecode_guess = "t2475716334c"
     dailyUrl = "https://c.stockcharts.com/c-sc/sc?s=" + stockcode + "&p=D&yr=1&mn=6&dy=0&i=" + sizecode_guess
     weeklyUrl = "https://c.stockcharts.com/c-sc/sc?s=" + stockcode + "&p=W&yr=5&mn=0&dy=0&i=" + sizecode_guess
@@ -49,7 +54,7 @@ function show_us_stock_image(stockcode) {
     show_image(weeklyUrl)
 }
 
-function show_china_stock_image(stockcode) {
+function show_sina_stock_image(stockcode) {
     var intradayUrl = "http://image.sinajs.cn/newchart/min/n/"
     var dailyUrl = "http://image.sinajs.cn/newchart/daily/n/"
     var weeklyUrl = "http://image.sinajs.cn/newchart/weekly/n/"
@@ -59,18 +64,17 @@ function show_china_stock_image(stockcode) {
 
 function show_stock_in_list(stock_list) {
     stock_list.forEach(function (item, index) {
-        show_us_stock_image(item);
+        show_sina_us_stock_image(item);
     });
 }
 //window.onload = function () { alert("It's loaded!") }
 
 function show_all() {
-    var us_vix_list = ["$vix", "$vxv", "$vxmt", "$vvix", "$vxn", "$ovx", "$gvx" ]
-    show_stock_in_list(us_vix_list)
+    //var us_vix_list = ["$vix", "$vxv", "$vxmt", "$vvix", "$vxn", "$ovx", "$gvx" ]
+    //show_stock_in_list(us_vix_list)
     //----------
-    var ficc_list = ["$ust10y", "$ust2y", "$ust10y-$ust2y", "$usd", "$audjpy", "$nikk", "$usdjpy", "$eurusd", "tlt", "tip", "$gold", 
-    "$wtic", "$copper", "$copper:$gold", "$copper:$wtic", "$BRENT", "lqd", "jnk", "gdx", "xle", "oih", "dbo", "uso", "bno", "pff", 
-    "dba", "dbc" ]
+    //var ficc_list = ["$ust10y", "$ust2y", "$ust10y-$ust2y", "$usd", "$audjpy", "$nikk", "$usdjpy", "$eurusd", "tlt", "tip", "$gold", "$wtic", "$copper", "$copper:$gold", "$copper:$wtic", "$BRENT", "lqd", "jnk", "gdx", "xle", "oih", "dbo", "uso", "bno", "pff", "dba", "dbc" ]
+    var ficc_list = ["tlt", "tip", "gld", "lqd", "jnk", "gdx", "xle", "oih", "dbo", "uso", "bno", "pff", "dba", "dbc" ]
     show_stock_in_list(ficc_list)
     //----------
     var us_etf_list = ["ashr", "mchi", "iefa", "dxj", "hezu", "eem", "ewa", "ilf", "ewz", "vnm", "enzl", "ewh", "ita", "soxx", "clix", "fdn",]
@@ -84,7 +88,7 @@ function show_all() {
     "stor", "frt", "pk", "mnr", "pld", "vtr", "cio", "wpc", "jcap", "umh", "cone", "acc", "ltc", "amt", "brx", "ladr", "bxmt"]
     show_stock_in_list(us_reit_stock_list)
     //-----------
-    show_china_stock_image("sh000001")
+    //show_china_stock_image("sh000001")
     //show_stock_image("sh000300")
     //show_stock_image("sh600030")
     //show_stock_image("sh600085")
