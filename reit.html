@@ -31,10 +31,10 @@ function show_image(src) {
 
 function show_image_all(intradayUrl, minWeekUrl, dailyUrl, weeklyUrl, monthlyUrl, stockcode) {
     //show_image(intradayUrl + stockcode + suffix);
-    show_image(minWeekUrl + stockcode + suffix);
+    //show_image(minWeekUrl + stockcode + suffix);
     show_image(dailyUrl + stockcode + suffix);
     show_image(weeklyUrl + stockcode + suffix);
-    show_image(monthlyUrl + stockcode + suffix);
+    //show_image(monthlyUrl + stockcode + suffix);
 }
 
 function show_sina_us_stock_image(stockcode) {
@@ -64,27 +64,28 @@ function show_sina_stock_image(stockcode) {
 
 function show_stock_in_list(stock_list) {
     stock_list.forEach(function (item, index) {
-        show_stockchart_dot_com_image(item);
+        show_sina_us_stock_image(item);
     });
 }
 //window.onload = function () { alert("It's loaded!") }
 
 function show_all() {
-    var us_vix_list = ["$vix", "$vxv", "$vxmt", "$vvix", "$vxn", "$ovx", "$gvx" ]
-    show_stock_in_list(us_vix_list)
+    //var us_vix_list = ["$vix", "$vxv", "$vxmt", "$vvix", "$vxn", "$ovx", "$gvx" ]
+    //show_stock_in_list(us_vix_list)
     //----------
-    var ficc_list = ["$ust10y", "$ust2y", "$ust10y-$ust2y", "$usd", "$audjpy", "$nikk", "$usdjpy", "$eurusd", "tlt", "tip", "$gold", "$wtic", "$copper", "$copper:$gold", "$copper:$wtic", "$brent", "lqd", "jnk", "gdx", "xle", "oih", "dbo", "uso", "bno", "pff", "dba", "dbc" ]
+    //var ficc_list = ["$ust10y", "$ust2y", "$ust10y-$ust2y", "$usd", "$audjpy", "$nikk", "$usdjpy", "$eurusd", "tlt", "tip", "$gold", "$wtic", "$copper", "$copper:$gold", "$copper:$wtic", "$BRENT", "lqd", "jnk", "gdx", "xle", "oih", "dbo", "uso", "bno", "pff", "dba", "dbc" ]
     //var ficc_list = ["tlt", "tip", "gld", "lqd", "jnk", "gdx", "xle", "oih", "dbo", "uso", "bno", "pff", "dba", "dbc" ]
-    show_stock_in_list(ficc_list)
+    //show_stock_in_list(ficc_list)
     //----------
-    //var us_etf_list = ["ashr", "mchi", "iefa", "dxj", "hezu", "eem", "ewa", "ilf", "ewz", "vnm", "enzl", "ewh", "ita", "soxx", "clix", "fdn",]
-    //show_stock_in_list(us_etf_list)
+   // var us_etf_list = ["ashr", "mchi", "iefa", "dxj", "hezu", "eem", "ewa", "ilf", "ewz", "vnm", "enzl", "ewh", "ita", "soxx", "clix", "fdn",]
+   // show_stock_in_list(us_etf_list)
     //-----------
     //var us_hot_stock_list = ["aapl", "goog", "msft", "amzn", "ba", "expe", "bkng", "fb", "crm", "ebay", "vrsn", "nflx", "nvda", "tsla", "xlnx", "txn", "tsm","intc", "amd","mu", "avgo", "qcom", "vmw", "twtr", "akam", "amt", "ffiv", "jnpr", "csco", "splk", "data", "trip", "ctrp", "atvi", "ea",  "pm", "pypl", "v", "intu", "msci", "ice", "t", "vz"]
     //show_stock_in_list(us_hot_stock_list)
     //----------
-    //var us_reit_stock_list = ["vnq", "spg", "skt", "ohi", "kim", "o", "dlr", "rez", "rem", "irm", "kbwy", "stag", "hasi", "acc", "nnn", "stor", "frt", "pk", "mnr", "pld", "vtr", "cio", "wpc", "jcap", "umh", "cone", "acc", "ltc", "amt", "brx", "ladr", "bxmt"]
-    //show_stock_in_list(us_reit_stock_list)
+    var us_reit_stock_list = ["vnq", "spg", "skt", "ohi", "kim", "o", "dlr", "rez", "rem", "irm", "kbwy", "stag", "hasi", "acc", "nnn", 
+    "stor", "frt", "pk", "mnr", "pld", "vtr", "cio", "wpc", "jcap", "umh", "cone", "acc", "ltc", "amt", "brx", "ladr", "bxmt"]
+    show_stock_in_list(us_reit_stock_list)
     //-----------
     //show_china_stock_image("sh000001")
     //show_stock_image("sh000300")
@@ -109,26 +110,6 @@ function show_all() {
 
 window.onload = function () { show_all() }
 
-show_image("https://enjoytherideworld.odoo.com/web/image/2715/CaptureSPY.JPG")
-
-document.write("<p><a href=https://c.stockcharts.com/c-sc/sc?s=SPY&p=D&b=5&g=0&i=t6078360210c>Trend</a><p><p>")
-
-document.write("<p><a href = https://stockcharts.com/freecharts/candleglance.html?%22$vix%22,%22$vxv%22,%22$vxmt%22,%22$vvix%22,%22$vxn%22,%22$ovx%22,%22$gvx%22|D|0>Volatility</a><p><p>")
-
-
-document.write("<p><a href = https://stockcharts.com/freecharts/candleglance.html?%22$ust10y%22,%22$ust2y%22,%22$ust10y-$ust2y%22,%22$usd%22,%22$audjpy%22,%22$nikk%22,%22$usdjpy%22,%22$eurusd%22,%22$gold%22,%22$wtic%22,%22$copper%22,%22$copper:$gold%22,%22$copper:$wtic%22|D|0>FICC</a><p>")
-
-
-document.write("<p><a href = https://stockcharts.com/freecharts/candleglance.html?%22tlt%22,%22tip%22,%22$gold%22,%22$brent%22,%22lqd%22,%22jnk%22,%22gdx%22,%22xle%22,%22oih%22,%22dbo%22,%22uso%22,%22bno%22,%22pff%22,%22dba%22,%22dbc%22|D|0>FICC2</a><p>")
-
-document.write("<p><a href=https://tj2013.github.io/usetf.html>ETF</a><p><p>")
-
-document.write("<p><a href=https://tj2013.github.io/usstock.html>Stocks</a>s<p><p>")
-
-document.write("<p><a href=https://tj2013.github.io/reit.html>REIT</a><p><p>")
-
 </script>
-
-
 
 </html>
