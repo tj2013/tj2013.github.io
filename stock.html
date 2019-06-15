@@ -2,124 +2,34 @@
 
 <body>
 
-<!--
-
-<img src="http://image.sinajs.cn/newchart/min/n/sh000001.gif" /img>
-
-
-<img src="http://image.sinajs.cn/newchart/daily/n/sh000001.gif" /img>
-
-
-<img src="http://image.sinajs.cn/newchart/weekly/n/sh000001.gif" /img>
-
-
-<img src="http://image.sinajs.cn/newchart/monthly/n/sh000001.gif" /img>
-
--->
-
 </body>
 
+<script src="image.js"></script>
+
 <script type="text/javascript">
-
-var suffix = ".gif"
-
-function show_image(src) {
-    var img = document.createElement("IMG");
-    img.src = src;
-    document.body.appendChild(img);
-}
-
-function show_image_all(intradayUrl, minWeekUrl, dailyUrl, weeklyUrl, monthlyUrl, stockcode) {
-    //show_image(intradayUrl + stockcode + suffix);
-    show_image(minWeekUrl + stockcode + suffix);
-    show_image(dailyUrl + stockcode + suffix);
-    show_image(weeklyUrl + stockcode + suffix);
-    show_image(monthlyUrl + stockcode + suffix);
-}
-
-function show_sina_us_stock_image(stockcode) {
-    var intradayUrl = "http://image.sinajs.cn/newchart/v5/usstock/min/"
-    var minWeekUrl = "http://image.sinajs.cn/newchart/v5/usstock/min_week/"
-    var dailyUrl = "http://image.sinajs.cn/newchart/v5/usstock/daily/"
-    var weeklyUrl = "http://image.sinajs.cn/newchart/v5/usstock/weekly/"
-    var monthlyUrl = "http://image.sinajs.cn/newchart/v5/usstock/monthly/"
-    show_image_all(intradayUrl, minWeekUrl, dailyUrl, weeklyUrl, monthlyUrl,stockcode)
-}
-
-function show_stockchart_dot_com_image(stockcode) {
-    sizecode_guess = "t2475716334c"
-    dailyUrl = "https://c.stockcharts.com/c-sc/sc?s=" + stockcode + "&p=D&yr=1&mn=6&dy=0&i=" + sizecode_guess
-    weeklyUrl = "https://c.stockcharts.com/c-sc/sc?s=" + stockcode + "&p=W&yr=5&mn=0&dy=0&i=" + sizecode_guess
-    show_image(dailyUrl)
-    show_image(weeklyUrl)
-}
-
-function show_sina_stock_image(stockcode) {
-    var intradayUrl = "http://image.sinajs.cn/newchart/min/n/"
-    var dailyUrl = "http://image.sinajs.cn/newchart/daily/n/"
-    var weeklyUrl = "http://image.sinajs.cn/newchart/weekly/n/"
-    var monthlyUrl = "http://image.sinajs.cn/newchart/monthly/n/"
-    show_image_all(intradayUrl, dailyUrl, weeklyUrl, monthlyUrl,stockcode)
-}
-
-function show_stock_in_list(stock_list) {
-    stock_list.forEach(function (item, index) {
-        show_stockchart_dot_com_image(item);
-    });
-}
-//window.onload = function () { alert("It's loaded!") }
 
 function show_all() {
     var us_vix_list = ["$vix", "$vxv", "$vxmt", "$vvix", "$vxn", "$ovx", "$gvx" ]
     show_stock_in_list(us_vix_list)
     //----------
     var ficc_list = ["$ust10y", "$ust2y", "$ust10y-$ust2y", "$usd", "$audjpy", "$nikk", "$usdjpy", "$eurusd", "tlt", "tip", "$gold", "$wtic", "$copper", "$copper:$gold", "$copper:$wtic", "$brent", "lqd", "jnk", "gdx", "xle", "oih", "dbo", "uso", "bno", "pff", "dba", "dbc" ]
-    //var ficc_list = ["tlt", "tip", "gld", "lqd", "jnk", "gdx", "xle", "oih", "dbo", "uso", "bno", "pff", "dba", "dbc" ]
     show_stock_in_list(ficc_list)
-    //----------
-    //var us_etf_list = ["ashr", "mchi", "iefa", "dxj", "hezu", "eem", "ewa", "ilf", "ewz", "vnm", "enzl", "ewh", "ita", "soxx", "clix", "fdn",]
-    //show_stock_in_list(us_etf_list)
-    //-----------
-    //var us_hot_stock_list = ["aapl", "goog", "msft", "amzn", "ba", "expe", "bkng", "fb", "crm", "ebay", "vrsn", "nflx", "nvda", "tsla", "xlnx", "txn", "tsm","intc", "amd","mu", "avgo", "qcom", "vmw", "twtr", "akam", "amt", "ffiv", "jnpr", "csco", "splk", "data", "trip", "ctrp", "atvi", "ea",  "pm", "pypl", "v", "intu", "msci", "ice", "t", "vz"]
-    //show_stock_in_list(us_hot_stock_list)
-    //----------
-    //var us_reit_stock_list = ["vnq", "spg", "skt", "ohi", "kim", "o", "dlr", "rez", "rem", "irm", "kbwy", "stag", "hasi", "acc", "nnn", "stor", "frt", "pk", "mnr", "pld", "vtr", "cio", "wpc", "jcap", "umh", "cone", "acc", "ltc", "amt", "brx", "ladr", "bxmt"]
-    //show_stock_in_list(us_reit_stock_list)
-    //-----------
-    //show_china_stock_image("sh000001")
-    //show_stock_image("sh000300")
-    //show_stock_image("sh600030")
-    //show_stock_image("sh600085")
-    //show_stock_image("sh600019")
-    //show_stock_image("sh601601")
-    //show_stock_image("sh600169")
-    //show_stock_image("sh600118")
-    //show_stock_image("sh600068")
-    //show_stock_image("sh600138")
-    //show_stock_image("sh600900")
-    //show_stock_image("sh600031")
-    //show_stock_image("sh600886")
-    //show_stock_image("sh600104")
-    //show_stock_image("sh600887")
-    //show_stock_image("sh600332")
-    //show_stock_image("sh601006")
-    //show_stock_image("sh601088")
-    //show_stock_image("sh600111")
 }
 
 window.onload = function () { show_all() }
 
-show_image("https://enjoytherideworld.odoo.com/web/image/2715/CaptureSPY.JPG")
 
-document.write("<p><a href=https://c.stockcharts.com/c-sc/sc?s=SPY&p=D&b=5&g=0&i=t6078360210c>Trend</a><p><p>")
+document.write("<p><a href=https://enjoytherideworld.odoo.com/hedging>Trend</a><p><p>")
+
+document.write("<p><a href=https://stockcharts.com/freecharts/yieldcurve.php>Yield Curve</a><p><p>")
 
 document.write("<p><a href = https://stockcharts.com/freecharts/candleglance.html?%22$vix%22,%22$vxv%22,%22$vxmt%22,%22$vvix%22,%22$vxn%22,%22$ovx%22,%22$gvx%22|D|0>Volatility</a><p><p>")
 
 
-document.write("<p><a href = https://stockcharts.com/freecharts/candleglance.html?%22$ust10y%22,%22$ust2y%22,%22$ust10y-$ust2y%22,%22$usd%22,%22$audjpy%22,%22$nikk%22,%22$usdjpy%22,%22$eurusd%22,%22$gold%22,%22$wtic%22,%22$copper%22,%22$copper:$gold%22,%22$copper:$wtic%22|D|0>FICC</a><p>")
+document.write("<p><a href = https://stockcharts.com/freecharts/candleglance.html?%22$ust10y%22,%22$ust2y%22,%22$ust3m%22,%22$ust10y-$ust2y%22,%22$usd%22,%22$audjpy%22,%22$nikk%22,%22$usdjpy%22,%22$eurusd%22,%22$gold%22,%22$copper%22,%22$copper:$gold%22,%22$copper:$wtic%22|D|0>FICC</a><p>")
 
 
-document.write("<p><a href = https://stockcharts.com/freecharts/candleglance.html?%22tlt%22,%22tip%22,%22$gold%22,%22$brent%22,%22lqd%22,%22jnk%22,%22gdx%22,%22xle%22,%22oih%22,%22dbo%22,%22uso%22,%22bno%22,%22pff%22,%22dba%22,%22dbc%22|D|0>FICC2</a><p>")
+document.write("<p><a href = https://stockcharts.com/freecharts/candleglance.html?%22tlt%22,%22tip%22,%22$wtic%22,%22$brent%22,%22lqd%22,%22jnk%22,%22gdx%22,%22xlf%22,%22$usd%22,%22$gold%22,%22$gold:$usd%22,%22pff%22|D|0>FICC2</a><p>")
 
 document.write("<p><a href=https://tj2013.github.io/usetf.html>ETF</a><p><p>")
 

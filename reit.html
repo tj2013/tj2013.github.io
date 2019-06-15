@@ -2,110 +2,16 @@
 
 <body>
 
-<!--
-
-<img src="http://image.sinajs.cn/newchart/min/n/sh000001.gif" /img>
-
-
-<img src="http://image.sinajs.cn/newchart/daily/n/sh000001.gif" /img>
-
-
-<img src="http://image.sinajs.cn/newchart/weekly/n/sh000001.gif" /img>
-
-
-<img src="http://image.sinajs.cn/newchart/monthly/n/sh000001.gif" /img>
-
--->
-
 </body>
+
+<script src="image.js"></script>
 
 <script type="text/javascript">
 
-var suffix = ".gif"
-
-function show_image(src) {
-    var img = document.createElement("IMG");
-    img.src = src;
-    document.body.appendChild(img);
-}
-
-function show_image_all(intradayUrl, minWeekUrl, dailyUrl, weeklyUrl, monthlyUrl, stockcode) {
-    //show_image(intradayUrl + stockcode + suffix);
-    //show_image(minWeekUrl + stockcode + suffix);
-    show_image(dailyUrl + stockcode + suffix);
-    show_image(weeklyUrl + stockcode + suffix);
-    //show_image(monthlyUrl + stockcode + suffix);
-}
-
-function show_sina_us_stock_image(stockcode) {
-    var intradayUrl = "http://image.sinajs.cn/newchart/v5/usstock/min/"
-    var minWeekUrl = "http://image.sinajs.cn/newchart/v5/usstock/min_week/"
-    var dailyUrl = "http://image.sinajs.cn/newchart/v5/usstock/daily/"
-    var weeklyUrl = "http://image.sinajs.cn/newchart/v5/usstock/weekly/"
-    var monthlyUrl = "http://image.sinajs.cn/newchart/v5/usstock/monthly/"
-    show_image_all(intradayUrl, minWeekUrl, dailyUrl, weeklyUrl, monthlyUrl,stockcode)
-}
-
-function show_stockchart_dot_com_image(stockcode) {
-    sizecode_guess = "t2475716334c"
-    dailyUrl = "https://c.stockcharts.com/c-sc/sc?s=" + stockcode + "&p=D&yr=1&mn=6&dy=0&i=" + sizecode_guess
-    weeklyUrl = "https://c.stockcharts.com/c-sc/sc?s=" + stockcode + "&p=W&yr=5&mn=0&dy=0&i=" + sizecode_guess
-    show_image(dailyUrl)
-    show_image(weeklyUrl)
-}
-
-function show_sina_stock_image(stockcode) {
-    var intradayUrl = "http://image.sinajs.cn/newchart/min/n/"
-    var dailyUrl = "http://image.sinajs.cn/newchart/daily/n/"
-    var weeklyUrl = "http://image.sinajs.cn/newchart/weekly/n/"
-    var monthlyUrl = "http://image.sinajs.cn/newchart/monthly/n/"
-    show_image_all(intradayUrl, dailyUrl, weeklyUrl, monthlyUrl,stockcode)
-}
-
-function show_stock_in_list(stock_list) {
-    stock_list.forEach(function (item, index) {
-        show_sina_us_stock_image(item);
-    });
-}
-//window.onload = function () { alert("It's loaded!") }
-
 function show_all() {
-    //var us_vix_list = ["$vix", "$vxv", "$vxmt", "$vvix", "$vxn", "$ovx", "$gvx" ]
-    //show_stock_in_list(us_vix_list)
-    //----------
-    //var ficc_list = ["$ust10y", "$ust2y", "$ust10y-$ust2y", "$usd", "$audjpy", "$nikk", "$usdjpy", "$eurusd", "tlt", "tip", "$gold", "$wtic", "$copper", "$copper:$gold", "$copper:$wtic", "$BRENT", "lqd", "jnk", "gdx", "xle", "oih", "dbo", "uso", "bno", "pff", "dba", "dbc" ]
-    //var ficc_list = ["tlt", "tip", "gld", "lqd", "jnk", "gdx", "xle", "oih", "dbo", "uso", "bno", "pff", "dba", "dbc" ]
-    //show_stock_in_list(ficc_list)
-    //----------
-   // var us_etf_list = ["ashr", "mchi", "iefa", "dxj", "hezu", "eem", "ewa", "ilf", "ewz", "vnm", "enzl", "ewh", "ita", "soxx", "clix", "fdn",]
-   // show_stock_in_list(us_etf_list)
-    //-----------
-    //var us_hot_stock_list = ["aapl", "goog", "msft", "amzn", "ba", "expe", "bkng", "fb", "crm", "ebay", "vrsn", "nflx", "nvda", "tsla", "xlnx", "txn", "tsm","intc", "amd","mu", "avgo", "qcom", "vmw", "twtr", "akam", "amt", "ffiv", "jnpr", "csco", "splk", "data", "trip", "ctrp", "atvi", "ea",  "pm", "pypl", "v", "intu", "msci", "ice", "t", "vz"]
-    //show_stock_in_list(us_hot_stock_list)
-    //----------
-    var us_reit_stock_list = ["vnq", "spg", "skt", "ohi", "kim", "o", "dlr", "rez", "rem", "irm", "kbwy", "stag", "hasi", "acc", "nnn", 
+     var us_reit_stock_list = ["vnq", "spg", "skt", "ohi", "kim", "o", "dlr", "rez", "rem", "irm", "kbwy", "stag", "hasi", "acc", "nnn", 
     "stor", "frt", "pk", "mnr", "pld", "vtr", "cio", "wpc", "jcap", "umh", "cone", "acc", "ltc", "amt", "brx", "ladr", "bxmt"]
-    show_stock_in_list(us_reit_stock_list)
-    //-----------
-    //show_china_stock_image("sh000001")
-    //show_stock_image("sh000300")
-    //show_stock_image("sh600030")
-    //show_stock_image("sh600085")
-    //show_stock_image("sh600019")
-    //show_stock_image("sh601601")
-    //show_stock_image("sh600169")
-    //show_stock_image("sh600118")
-    //show_stock_image("sh600068")
-    //show_stock_image("sh600138")
-    //show_stock_image("sh600900")
-    //show_stock_image("sh600031")
-    //show_stock_image("sh600886")
-    //show_stock_image("sh600104")
-    //show_stock_image("sh600887")
-    //show_stock_image("sh600332")
-    //show_stock_image("sh601006")
-    //show_stock_image("sh601088")
-    //show_stock_image("sh600111")
+    show_sina_us_stock_in_list(us_reit_stock_list)
 }
 
 window.onload = function () { show_all() }
